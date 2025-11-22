@@ -1,1 +1,67 @@
 /* estilos */ 
+/* estilos */ 
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f3ef; /* Nude claro */
+    color: #3d3d3d;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-text h1 {
+    font-size: 38px;
+    color: #c48b9f; /* Rosa queimado */
+}
+
+.hero-text h2 {
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    font-size: 16px;
+    margin-bottom: 25px;
+}
+
+button {
+    padding: 14px 28px;
+    border: none;
+    background-color: #d6a5b4; /* Rosa claro */
+    color: #fff;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #c88ca0;
+}
+
+.hero-img img {
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.sobre h2,
+.autor h2 {
+    color: #c48b9f;
+    font-size: 28px;
+}
+
+.cta-final {
+    text-align: center;
+}
