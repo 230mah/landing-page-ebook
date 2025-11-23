@@ -1,275 +1,268 @@
-<!DOCTYPE html> 
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Café, Códigos e Planilhas – Ebook</title>
 
-```
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-    /* ==========================
-       RESET & BASE
-    ==========================*/
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    body {
-        background: #ffffff;
-        color: #2b2b2b;
-        line-height: 1.6;
-    }
+        body {
+            background: #ffffff;
+            color: #2b2b2b;
+            overflow-x: hidden;
+        }
 
-    h1, h2, h3 {
-        font-weight: 700;
-    }
+        /* ==========================
+           ANIMAÇÕES SUAVES
+        ==========================*/
+        @keyframes floatCoffee {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+            100% { transform: translateY(0); }
+        }
 
-    a, button {
-        cursor: pointer;
-    }
+        @keyframes floatBee {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(10px, -10px) rotate(5deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
 
-    /* ==========================
-       HERO
-    ==========================*/
-    .hero {
-        width: 100%;
-        padding: 60px 10%;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 40px;
-        background: linear-gradient(135deg, #f8d4ff, #fff);
-    }
+        /* ==========================
+           HERO MODERNO
+        ==========================*/
+        .hero {
+            width: 100%;
+            padding: 80px 10%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            background: linear-gradient(135deg, #f3e4ff, #ffffff);
+            position: relative;
+        }
 
-    .hero-text {
-        flex: 1;
-        min-width: 260px;
-    }
+        /* Ícones animados */
+        .coffee-icon {
+            width: 90px;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            animation: floatCoffee 4s ease-in-out infinite;
+            opacity: 0.85;
+        }
 
-    .hero-text h1 {
-        font-size: 3rem;
-        margin-bottom: 10px;
-        color: #5b1277;
-    }
+        .bee-icon {
+            width: 70px;
+            position: absolute;
+            bottom: 40px;
+            right: 50px;
+            animation: floatBee 3.5s ease-in-out infinite;
+            opacity: 0.85;
+        }
 
-    .hero-text h2 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
-        font-weight: 400;
-    }
+        .hero-text {
+            flex: 1;
+            min-width: 280px;
+            max-width: 520px;
+        }
 
-    .hero-text button {
-        background: #5b1277;
-        color: white;
-        padding: 16px 32px;
-        border: none;
-        border-radius: 6px;
-        font-size: 1.1rem;
-        transition: 0.3s;
-    }
+        .hero-text h1 {
+            font-size: 3.2rem;
+            color: #5b1277;
+            margin-bottom: 15px;
+        }
 
-    .hero-text button:hover {
-        background: #3d0953;
-    }
+        .hero-text h2 {
+            font-size: 1.4rem;
+            margin-bottom: 22px;
+            color: #4a4a4a;
+            font-weight: 400;
+        }
 
-    .hero-img {
-        flex: 1;
-        text-align: center;
-    }
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 28px;
+        }
 
-    .hero-img img {
-        width: 100%;
-        max-width: 380px;
-        border-radius: 10px;
-    }
+        .button-primary {
+            background: #5b1277;
+            color: white;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.15rem;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .button-primary:hover {
+            background: #3d0953;
+            transform: scale(1.04);
+        }
 
-    /* ==========================
-       SECTIONS
-    ==========================*/
-    section {
-        padding: 60px 10%;
-    }
+        .hero-img img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 14px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            animation: floatCoffee 5s ease-in-out infinite;
+        }
 
-    .section-title {
-        text-align: center;
-        font-size: 2rem;
-        margin-bottom: 40px;
-    }
+        /* ==========================
+           SEÇÕES MODERNAS
+        ==========================*/
+        section {
+            padding: 70px 10%;
+        }
 
-    /* BENEFÍCIOS */
-    .beneficios {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 25px;
-        text-align: center;
-    }
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin-bottom: 50px;
+            color: #5b1277;
+        }
 
-    .beneficio-card {
-        background: #fafafa;
-        padding: 25px;
-        border-radius: 8px;
-        border: 1px solid #eee;
-        transition: 0.3s;
-    }
+        .beneficios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 35px;
+            text-align: center;
+        }
 
-    .beneficio-card:hover {
-        transform: translateY(-5px);
-    }
+        .beneficio-card {
+            background: #faf5ff;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #f0ddff;
+            transition: 0.3s;
+        }
+        .beneficio-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+        }
 
-    /* SOBRE O AUTOR */
-    .autor p {
-        margin-bottom: 16px;
-        font-size: 1.05rem;
-    }
+        .autor p {
+            font-size: 1.15rem;
+            margin-bottom: 18px;
+        }
 
-    /* DEPOIMENTOS */
-    .testimonials {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 20px;
-    }
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
-    .test-card {
-        background: #fff7ff;
-        border: 1px solid #f1d8ff;
-        padding: 25px;
-        border-radius: 8px;
-    }
+        .test-card {
+            background: #fff8ff;
+            border: 1px solid #ecd2ff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
 
-    .test-card strong {
-        display: block;
-        margin-top: 10px;
-    }
+        .cta-final {
+            text-align: center;
+            padding-bottom: 100px;
+        }
 
-    /* CALL TO ACTION */
-    .cta-final {
-        text-align: center;
-    }
+        .cta-final .button-primary {
+            font-size: 1.3rem;
+            padding: 20px 50px;
+        }
 
-    .cta-final button {
-        background: #5b1277;
-        color: white;
-        padding: 18px 42px;
-        border: none;
-        border-radius: 6px;
-        font-size: 1.2rem;
-        transition: 0.3s;
-    }
-
-    .cta-final button:hover {
-        background: #3d0953;
-    }
-
-    /* FOOTER */
-    footer {
-        text-align: center;
-        padding: 25px 10%;
-        background: #fafafa;
-        border-top: 1px solid #eee;
-        font-size: 0.9rem;
-    }
-</style>
-```
-
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
 
 <body>
 
-```
-<!-- HERO -->
-<section class="hero">
-    <div class="hero-text">
-        <h1>Café, Códigos e Planilhas</h1>
-        <h2>O guia simples e prático para começar em Dados e TI</h2>
-        <p>Feito para quem quer entrar na área e não sabe por onde começar, sem enrolação e direto ao ponto.</p>
-        <button>Quero meu ebook</button>
-    </div>
+    <!-- ÍCONES ANIMADOS -->
+    <img src="assets/img/cafe-icon.png" class="coffee-icon" alt="Café animado">
+    <img src="assets/img/bee-icon.png" class="bee-icon" alt="Abelha animada">
 
-    <div class="hero-img">
-        <img src="assets/img/capa-ebook.jpg" alt="Capa do Ebook">
-    </div>
-</section>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Café, Códigos e Planilhas</h1>
+            <h2>Uma introdução clara, simples e prática ao universo da Tecnologia e dos Dados.</h2>
+            <p>Feito para iniciantes que querem entrar na área com segurança e sem complicação.</p>
 
-<!-- O QUE VOCÊ VAI APRENDER -->
-<section>
-    <h2 class="section-title">O que você vai aprender?</h2>
-
-    <div class="beneficios">
-        <div class="beneficio-card">
-            <h3>Começando sem medo</h3>
-            <p>Entenda a área de TI e como iniciar de forma estratégica e realista.</p>
-        </div>
-        <div class="beneficio-card">
-            <h3>Fundamentos do Mundo dos Dados</h3>
-            <p>O que é análise, ciência de dados, ferramentas, termos e conceitos essenciais.</p>
-        </div>
-        <div class="beneficio-card">
-            <h3>Caminhos de Carreira</h3>
-            <p>Descubra o que cada área faz e qual pode ser seu melhor caminho.</p>
-        </div>
-        <div class="beneficio-card">
-            <h3>Aprendizado Real</h3>
-            <p>Conteúdo baseado em experiência real, prática e estudo de verdade.</p>
-        </div>
-    </div>
-</section>
-
-<!-- QUEM SOU EU -->
-<section class="autor">
-    <h2 class="section-title">Quem Sou Eu?</h2>
-    <p>
-        Olá! Eu sou a Marília Mariano. Minha jornada no universo da tecnologia e dos dados começou quase por acaso — mas bastou o primeiro contato para eu me apaixonar por esse mundo.
-    </p>
-    <p>
-        Com o tempo, percebi algo importante: uma grande parte das pessoas ainda não conhece nem o básico sobre áreas como desenvolvimento, análise de dados, ciência de dados e outras especialidades de TI.
-    </p>
-    <p>
-        E foi aí que entendi meu propósito: ajudar pessoas a entender e entrar nesse universo que muda vidas, abre portas e cria novas oportunidades todos os dias.
-    </p>
-    <p>
-        Se você tem interesse em tecnologia, dados ou simplesmente quer começar do zero e aprender algo novo, vem comigo. Eu vou te acompanhar nessa caminhada e te mostrar que conhecimento pode transformar seu futuro.
-    </p>
-</section>
-
-<!-- DEPOIMENTOS -->
-<section>
-    <h2 class="section-title">Quem já leu disse...</h2>
-
-    <div class="testimonials">
-        <div class="test-card">
-            “Finalmente alguém explicou tecnologia sem complicar!”
-            <strong>— Ana Paula</strong>
+            <a href="https://pay.kiwify.com.br/N0h8p1f" target="_blank" class="button-primary">Quero meu ebook</a>
         </div>
 
-        <div class="test-card">
-            “Esse ebook destravou algo em mim. Agora eu sei exatamente por onde começar.”
-            <strong>— Lucas Ribeiro</strong>
+        <div class="hero-img">
+            <img src="assets/img/capa-ebook.jpg" alt="Capa do Ebook" />
         </div>
+    </section>
 
-        <div class="test-card">
-            “A leitura é leve, prática e inspiradora. Recomendo demais!”
-            <strong>— Juliana Souza</strong>
+    <!-- O QUE VOCÊ VAI APRENDER -->
+    <section>
+        <h2 class="section-title">O que você vai aprender?</h2>
+
+        <div class="beneficios">
+            <div class="beneficio-card">
+                <h3>Primeiros passos</h3>
+                <p>Entenda como funciona o universo de TI e comece da forma certa.</p>
+            </div>
+            <div class="beneficio-card">
+                <h3>Fundamentos de Dados</h3>
+                <p>Conceitos essenciais que todo iniciante precisa dominar.</p>
+            </div>
+            <div class="beneficio-card">
+                <h3>Caminhos de Carreira</h3>
+                <p>Análise, Ciência de Dados, Desenvolvimento e muito mais.</p>
+            </div>
+            <div class="beneficio-card">
+                <h3>Aprendizado Real</h3>
+                <p>Conteúdo direto, acessível e baseado em experiência real.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CTA FINAL -->
-<section class="cta-final">
-    <button>Quero garantir minha cópia</button>
-</section>
+    <!-- SOBRE A AUTORA -->
+    <section class="autor">
+        <h2 class="section-title">Quem Sou Eu?</h2>
+        <p>Sou Marília Mariano, apaixonada pelo universo da tecnologia e dos dados. Minha missão é traduzir esse mundo de forma simples para quem está começando.</p>
+        <p>Eu sei como é difícil dar os primeiros passos — por isso criei este ebook que eu gostaria de ter encontrado quando iniciei.</p>
+        <p>Meu objetivo é te guiar na direção certa, com clareza, propósito e caminhos reais.</p>
+    </section>
 
-<footer>
-    © 2025 – Café, Códigos e Planilhas. Todos os direitos reservados.
-</footer>
-```
+    <!-- DEPOIMENTOS -->
+    <section>
+        <h2 class="section-title">Quem já leu disse...</h2>
 
+        <div class="testimonials">
+            <div class="test-card">“Finalmente alguém explicou tecnologia sem complicar!”<strong>— Ana Paula</strong></div>
+            <div class="test-card">“Esse ebook destravou algo em mim. Agora sei exatamente por onde começar.”<strong>— Lucas Ribeiro</strong></div>
+            <div class="test-card">“Leve, prático e inspirador. Recomendo demais!”<strong>— Juliana Souza</strong></div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-final">
+        <a href="https://pay.kiwify.com.br/N0h8p1f" target="_blank" class="button-primary">Quero garantir minha cópia</a>
+    </section>
+
+    <footer>
+        © 2025 – Café, Códigos e Planilhas. Todos os direitos reservados.
+    </footer>
 </body>
 </html>
+
